@@ -2,7 +2,7 @@
 VLFEATROOT = '../vlfeat-0.9.20';
 run(strcat(VLFEATROOT,'/toolbox/vl_setup'))
 % read images
-dirPath = '../data/testingImages/';
+dirPath = '../testImg2/';
 files = dir(strcat(dirPath,'*.jpg'));
 
 disp('Start reading images');
@@ -14,11 +14,11 @@ disp('Start cylindrical projection');
 proj_images = cylindricalProjection(images,f);
 disp('Finish cylindrical projection');
 
-disp('Start cropping images');
-crop_images = cropImages(proj_images);
-disp('Finish cropping images');
+%disp('Start cropping images');
+%crop_images = cropImages(proj_images);
+%disp('Finish cropping images');
 
 disp('Start stiching images');
-finalImage = stich(crop_images);
+finalImage = stitch(proj_images);
 disp('Finish stiching images');
 
